@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#444256</color>
+    <color name="colorPrimaryDark">#353345</color>
+    <color name="colorAccent">#FFC107</color>
+    <color name="fabColor">#FFC107</color>
+    <color name="mainColor">#444256</color>
+    <color name="darkBackgroundColor">#353345</color>
+    <color name="toolBarTextColor">#fff</color>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+            <item
+                android:id="@+id/left_nav_today"
+                android:icon="@android:drawable/ic_menu_day"
+                android:title="На сегодня" />
+            <item
+                android:id="@+id/left_nav_month"
+                android:icon="@android:drawable/ic_menu_month"
+                android:title="На месяц" />
+            <item
+                android:id="@+id/left_nav_year"
+                android:icon="@android:drawable/ic_menu_today"
+                android:title="На год" />
+            <item
+                android:id="@+id/left_nav_all"
+                android:icon="@android:drawable/ic_menu_agenda"
+                android:title="Все задачи" />
+            <item
+                android:id="@+id/exit"
+                android:title="Выход"
+                android:icon="@drawable/ic_exit"/>
+</menu>

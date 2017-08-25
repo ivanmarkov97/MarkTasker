@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkBackgroundColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/add_task_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/add_task_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        </android.support.v7.widget.Toolbar>
+
+       <TextView
+           android:text=""
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="50dp"
+           android:layout_marginBottom="20dp" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/darkBackgroundColor"
+            android:id="@+id/show_task_name_container">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Название задачи"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@android:color/darker_gray"
+                android:id="@+id/show_task_name_header"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_task_name_value"
+                android:layout_below="@+id/show_task_name_header"
+                android:background="@drawable/add_task_background_edit_text"
+                android:textColor="@android:color/white"
+                android:minHeight="40dp"
+                android:layout_margin="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:gravity="center_vertical"/>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/add_task_name_value"
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="10dp"
+                    android:id="@+id/show_task_deadline_date_container">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/show_task_deadline_date_image"
+                        app:srcCompat="@android:drawable/ic_menu_recent_history" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/show_task_deadline_date_value_container"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/show_task_deadline_date_image"
+                        android:layout_marginStart="30dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/show_task_deadline_date_header"
+                            android:text="Срок"
+                            android:layout_centerVertical="true"
+                            android:textColor="@android:color/darker_gray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="26.7.2017"
+                            android:layout_marginTop="12dp"
+                            android:id="@+id/add_task_deadline_date_date"
+                            android:textColor="@android:color/white" />
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/add_task_deadline_date_pick"
+                        android:background="@android:color/transparent"
+                        android:layout_marginRight="20dp"
+                        app:srcCompat="@android:drawable/ic_menu_edit"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true" />
+
+                </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:background="@color/darkBackgroundColor"
+                android:layout_below="@+id/show_task_deadline_date_container"
+                android:id="@+id/show_task_description_container"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/show_task_description_header"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Описание"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/add_task_description"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/add_task_background_edit_text"
+                    android:padding="10dp"
+                    android:gravity="top"
+                    android:minHeight="250dp"
+                    android:textColor="@android:color/white"
+                    />
+
+            </LinearLayout>
+
+            </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_task_fab_add"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_fab_add_task"
+        android:layout_marginRight="24dp"
+        app:layout_anchor="@id/add_task_app_bar"
+        app:layout_anchorGravity="bottom|right|end"
+        />
+
+
+</android.support.design.widget.CoordinatorLayout>

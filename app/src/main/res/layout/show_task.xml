@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/show_task_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mainColor"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/show_task_toolbar"
+        android:background="@color/darkBackgroundColor"
+        android:id="@+id/show_task_name_container">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Название задачи"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/darker_gray"
+            android:id="@+id/show_task_name_header"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/show_task_name_value"
+            android:layout_below="@+id/show_task_name_header"
+            android:background="@drawable/add_task_background_edit_text"
+            android:textColor="@android:color/white"
+            android:minHeight="40dp"
+            android:layout_margin="10dp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:gravity="center_vertical"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/show_task_time_container"
+        android:layout_below="@+id/show_task_name_container"
+        android:layout_marginTop="5dp"
+        android:background="@color/darkBackgroundColor"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/show_task_time_header"
+            android:text="Time"
+            android:textColor="@android:color/darker_gray"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:id="@+id/show_task_added_date_container">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/show_task_added_date_image"
+                app:srcCompat="@android:drawable/ic_menu_today" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/show_task_added_date_value_container"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/show_task_added_date_image"
+                android:layout_marginStart="30dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/show_task_added_date_header"
+                    android:text="Добавлено"
+                    android:layout_centerVertical="true"
+                    android:textColor="@android:color/darker_gray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25.7.2017"
+                    android:layout_marginTop="12dp"
+                    android:id="@+id/show_task_added_date_date"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_task_added_date_container"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="10dp"
+            android:id="@+id/show_task_deadline_date_container">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/show_task_deadline_date_image"
+                app:srcCompat="@android:drawable/ic_menu_recent_history" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/show_task_deadline_date_value_container"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/show_task_deadline_date_image"
+                android:layout_marginStart="30dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/show_task_deadline_date_header"
+                    android:text="Срок"
+                    android:layout_centerVertical="true"
+                    android:textColor="@android:color/darker_gray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="26.7.2017"
+                    android:layout_marginTop="12dp"
+                    android:id="@+id/show_task_deadline_date_date"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/show_task_deadline_date_change"
+                android:layout_alignBottom="@+id/show_task_deadline_date_image"
+                android:layout_alignParentEnd="true"
+                android:background="@android:color/transparent"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@android:drawable/ic_menu_edit" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        android:background="@color/darkBackgroundColor"
+        android:layout_below="@+id/show_task_time_container"
+        android:id="@+id/show_task_description_container"
+        android:layout_above="@+id/show_task_button_save_changes">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/show_task_description_header"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Описание"
+            android:textColor="@android:color/darker_gray"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/show_task_description"
+            android:layout_margin="10dp"
+            android:background="@drawable/add_task_background_edit_text"
+            android:padding="10dp"
+            android:gravity="top"
+            android:text="ekhvblkejrnvk;je;kvjnerkjvnerjvnerjnver;kjvnerjlvnerlvnerljvnle;vnelrvne;rljvnelrjvne;lrjvnelrjvnjelrnvejlrnvl;jer"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+
+    <Button
+        android:text="Сохранить изменения"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:id="@+id/show_task_button_save_changes"
+        android:textColor="@android:color/white"
+        android:theme="@style/NotCapsButton"
+        android:padding="10dp"
+        android:layout_margin="10dp"/>
+
+</RelativeLayout>
