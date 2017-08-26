@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements OnStartDragListen
         itemTouchHelper.attachToRecyclerView(recyclerViewTasks);
         //numToDO.setText(String.valueOf(tasks.size()));
         //headerDescription.setText("Все задачи");
+        /*kek*/
         /**
          * END INIT
          */
