@@ -116,33 +116,44 @@ public class AddTaskActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(v.getId() == R.id.add_task_fab_add){
-                    Toast.makeText(getApplicationContext(),
+                    /*Toast.makeText(getApplicationContext(),
                             "Task Name: " + taskName.getText() +
                             "Task Description: " + taskDescription.getText() +
                             "Task Date: " + taskDate.getText(),
                             Toast.LENGTH_SHORT)
                             .show();
-
+                    */
                     DBHelper dbHelper = new DBHelper(getApplicationContext());
                     SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
-                    ContentValues contentValues = new ContentValues();
+                    boolean toAdd = true;
+                    Cursor cursorCheck = sqLiteDatabase.query(DBHelper.DATABASE_TABLE_NAME, null, null, null, null, null, null, null);
+                    if(cursorCheck.moveToFirst()){
+                        String checkName = "";
+                        int checkNameIndex = cursorCheck.getColumnIndex(DBHelper.TASK_NAME);
+                        do{
+                            checkName = cursorCheck.getString(checkNameIndex);
+                            if (checkName.equals(taskName.getText().toString())){
+                                toAdd = false;
+                            }
+                        }while (cursorCheck.moveToNext());
+                    }
 
-                    //Toast.makeText(getApplicationContext(), day_x + "/" + month_x + "/" + year_x ,Toast.LENGTH_SHORT).show();
-
-                    contentValues.put(DBHelper.TASK_NAME, taskName.getText().toString());
-                    contentValues.put(DBHelper.TASK_DESCRIPTION, taskDescription.getText().toString());
-                    contentValues.put(DBHelper.TASK_DATE_DAY, day_x);
-                    contentValues.put(DBHelper.TASK_DATE_MONTH, month_x);
-                    contentValues.put(DBHelper.TASK_DATE_YEAR, year_x);
-                    contentValues.put(DBHelper.TASK_GROUP, "");
-                    contentValues.put(DBHelper.TASK_DONE, "false");
-                    sqLiteDatabase.insert(DBHelper.DATABASE_TABLE_NAME, null, contentValues);
-
-                    Cursor cursor = sqLiteDatabase.query(DBHelper.DATABASE_TABLE_NAME, null, null, null, null, null, null);
-                    //Log.d("My_TAG", String.valueOf(cursor.getCount()));
-
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    finish();
+                    if(toAdd) {
+                        ContentValues contentValues = new ContentValues();
+                        contentValues.put(DBHelper.TASK_NAME, taskName.getText().toString());
+                        contentValues.put(DBHelper.TASK_DESCRIPTION, taskDescription.getText().toString());
+                        contentValues.put(DBHelper.TASK_DATE_DAY, day_x);
+                        contentValues.put(DBHelper.TASK_DATE_MONTH, month_x);
+                        contentValues.put(DBHelper.TASK_DATE_YEAR, year_x);
+                        contentValues.put(DBHelper.TASK_GROUP, "");
+                        contentValues.put(DBHelper.TASK_DONE, "false");
+                        sqLiteDatabase.insert(DBHelper.DATABASE_TABLE_NAME, null, contentValues);
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        finish();
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "Задача с таким именем уже существует", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
