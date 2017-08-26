@@ -120,7 +120,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> im
                 "task_name = ? and task_date_day = ? and task_date_month = ? and task_date_year = ?",
                 new String[]{taskNameToDel, taskDay, taskMonth, taskYear}
         );
-
+        
         tasks.remove(position);
         notifyItemRemoved(position);
         Toast.makeText(this.context, "deleted " + position, Toast.LENGTH_SHORT).show();

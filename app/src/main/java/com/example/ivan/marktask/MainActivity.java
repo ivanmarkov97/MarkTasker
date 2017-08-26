@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity implements OnStartDragListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        numToDO = (TextView) findViewById(R.id.textViewNumberToDO);
-        headerDescription = (TextView) findViewById(R.id.textViewHeaderDescription);
+        //numToDO = (TextView) findViewById(R.id.textViewNumberToDO);
+        //headerDescription = (TextView) findViewById(R.id.textViewHeaderDescription);
 
         /**
          * DATABASE CREATION
@@ -117,8 +117,8 @@ public class MainActivity extends AppCompatActivity implements OnStartDragListen
         ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(taskAdapter);
         itemTouchHelper = new ItemTouchHelper(callback);
         itemTouchHelper.attachToRecyclerView(recyclerViewTasks);
-        numToDO.setText(String.valueOf(tasks.size()));
-        headerDescription.setText("Все задачи");
+        //numToDO.setText(String.valueOf(tasks.size()));
+        //headerDescription.setText("Все задачи");
         /**
          * END INIT
          */
@@ -269,7 +269,7 @@ public class MainActivity extends AppCompatActivity implements OnStartDragListen
                     default:
                         break;
                 }
-                numToDO.setText(String.valueOf(tasks.size()));
+                //numToDO.setText(String.valueOf(tasks.size()));
                 return true;
             }
         });
