@@ -59,47 +59,13 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:id="@+id/show_task_time_header"
-            android:text="Time"
             android:textColor="@android:color/darker_gray"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="1dp"
             android:id="@+id/show_task_added_date_container">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:id="@+id/show_task_added_date_image"
-                app:srcCompat="@android:drawable/ic_menu_today" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/show_task_added_date_value_container"
-                android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/show_task_added_date_image"
-                android:layout_marginStart="30dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/show_task_added_date_header"
-                    android:text="Добавлено"
-                    android:layout_centerVertical="true"
-                    android:textColor="@android:color/darker_gray" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="25.7.2017"
-                    android:layout_marginTop="12dp"
-                    android:id="@+id/show_task_added_date_date"
-                    android:textColor="@android:color/white" />
-            </LinearLayout>
-
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"

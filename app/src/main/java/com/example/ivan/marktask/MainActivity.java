@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements OnStartDragListen
                             }while (sCursor.moveToNext());
                             taskAdapter.notifyDataSetChanged();
                         }
-                        headerDescription.setText("На сегодня");
+                        //headerDescription.setText("На сегодня");
                         break;
                     case R.id.left_nav_month:
                         //Toast.makeText(getApplicationContext(), "MONTH", Toast.LENGTH_SHORT).show();
@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity implements OnStartDragListen
                             }while (sCursor.moveToNext());
                             taskAdapter.notifyDataSetChanged();
                         }
-                        headerDescription.setText("На месяц");
+                        //headerDescription.setText("На месяц");
                         break;
                     case R.id.left_nav_year:
                         //Toast.makeText(getApplicationContext(), "YEAR", Toast.LENGTH_SHORT).show();
@@ -239,7 +239,7 @@ public class MainActivity extends AppCompatActivity implements OnStartDragListen
                             }while (sCursor.moveToNext());
                             taskAdapter.notifyDataSetChanged();
                         }
-                        headerDescription.setText("На год");
+                        //headerDescription.setText("На год");
                         break;
                     case R.id.left_nav_all:
                         //Toast.makeText(getApplicationContext(), "ALL", Toast.LENGTH_SHORT).show();
@@ -263,7 +263,7 @@ public class MainActivity extends AppCompatActivity implements OnStartDragListen
                             } while (sCursor.moveToNext());
                             taskAdapter.notifyDataSetChanged();
                         }
-                        headerDescription.setText("Все задачи");
+                        //headerDescription.setText("Все задачи");
                         break;
                     case R.id.exit:
                         finish();

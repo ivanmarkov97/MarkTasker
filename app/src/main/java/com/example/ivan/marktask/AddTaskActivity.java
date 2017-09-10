@@ -111,6 +111,8 @@ public class AddTaskActivity extends AppCompatActivity {
         taskName = (EditText) findViewById(R.id.add_task_name_value);
         taskDescription = (EditText) findViewById(R.id.add_task_description);
 
+        taskDate.setText(day_x + "." + String.valueOf(month_x + 1) + "." + year_x);
+
         buttonAddTask = (FloatingActionButton) findViewById(R.id.add_task_fab_add);
         buttonAddTask.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,7 +145,7 @@ public class AddTaskActivity extends AppCompatActivity {
                         contentValues.put(DBHelper.TASK_NAME, taskName.getText().toString());
                         contentValues.put(DBHelper.TASK_DESCRIPTION, taskDescription.getText().toString());
                         contentValues.put(DBHelper.TASK_DATE_DAY, day_x);
-                        contentValues.put(DBHelper.TASK_DATE_MONTH, month_x);
+                        contentValues.put(DBHelper.TASK_DATE_MONTH, month_x + 1);
                         contentValues.put(DBHelper.TASK_DATE_YEAR, year_x);
                         contentValues.put(DBHelper.TASK_GROUP, "");
                         contentValues.put(DBHelper.TASK_DONE, "false");
